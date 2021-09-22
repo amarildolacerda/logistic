@@ -23,9 +23,16 @@ class HomeView extends StatelessWidget {
           ],
         ),
         builder: (BuildContext ctx, toolbar) => MobileMenuBox(
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(25.0),
+              ),
               appBar: AppBar(
-                  elevation: 0, title: const Text('Storeware - Logística2')),
+                  elevation: 0, title: const Text('Storeware - Logística')),
               choices: HomeMenu.create(),
+              style: const TextStyle(
+                color: Colors.indigo,
+                fontSize: 18,
+              ),
               bottomNavigationBar: toolbar,
             ));
   }
