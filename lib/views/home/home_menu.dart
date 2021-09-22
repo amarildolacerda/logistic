@@ -6,3 +6,5 @@ class HomeMenu {
         TabChoice(label: 'Cadastros', builder: () => Container()),
       ];
 }
+
+// ignore: must_be_immutable

@@ -8,13 +8,25 @@ class HomeView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        appBar:
-            AppBar(elevation: 0, title: const Text('Storeware - Logística2')),
-        body: (0 == 1)
-            ? Container()
-            : MobileMenuBox(
-                choices: HomeMenu.create(),
-              ));
+    return MobileToolbar(
+        toolbar: MobileBottonNavigatorButton(
+          selected: 0,
+          radius: 5,
+          choices: [
+            TabChoice(
+              label: 'Cadastro',
+              image: const Icon(Icons.home, size: 32),
+              //builder: () => Container(),
+              color: Colors.amber,
+              style: const TextStyle(fontSize: 18, color: Colors.blue),
+            ),
+          ],
+        ),
+        builder: (BuildContext ctx, toolbar) => MobileMenuBox(
+              appBar: AppBar(
+                  elevation: 0, title: const Text('Storeware - Logística2')),
+              choices: HomeMenu.create(),
+              bottomNavigationBar: toolbar,
+            ));
   }
 }
